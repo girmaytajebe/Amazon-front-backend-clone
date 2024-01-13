@@ -14,9 +14,10 @@ function Payment() {
 
 	const navigate = useNavigate();
 
-	const getBasketTotal = (basket) =>
-		basket?.reduce((amount, item) => item.price + amount, 0);
-
+	// const getBasketTotal = (basket) =>
+	// 	basket?.reduce((amount, item) => item.price + amount, 0);
+const getBasketTotal = (basket) =>
+    basket?.reduce((amount, item) => item.price * item.quantity + amount, 0);
 	const stripe = useStripe();
 	const elements = useElements();
 
